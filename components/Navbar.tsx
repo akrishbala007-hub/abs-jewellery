@@ -36,9 +36,9 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link href="#" className="text-gray-400 hover:text-[#E1306C] transition-colors"><Instagram size={20} /></Link>
+                        <Link href="https://www.instagram.com/abs_jew_making?igsh=MW8xcGJvaHhydTludA==" target="_blank" className="text-gray-400 hover:text-[#E1306C] transition-colors"><Instagram size={20} /></Link>
                         <Link href="#" className="text-gray-400 hover:text-[#1877F2] transition-colors"><Facebook size={20} /></Link>
-                        <Link href="#" className="text-gray-400 hover:text-[#FF0000] transition-colors"><Youtube size={20} /></Link>
+                        <Link href="https://www.youtube.com/@SofiyaA-v6u" target="_blank" className="text-gray-400 hover:text-[#FF0000] transition-colors"><Youtube size={20} /></Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -71,9 +71,9 @@ const Navbar = () => {
                                 </Link>
                             ))}
                             <div className="flex space-x-6 pt-4">
-                                <Link href="#" className="text-gray-400 hover:text-[#E1306C]"><Instagram size={24} /></Link>
+                                <Link href="https://www.instagram.com/abs_jew_making?igsh=MW8xcGJvaHhydTludA==" target="_blank" className="text-gray-400 hover:text-[#E1306C]"><Instagram size={24} /></Link>
                                 <Link href="#" className="text-gray-400 hover:text-[#1877F2]"><Facebook size={24} /></Link>
-                                <Link href="#" className="text-gray-400 hover:text-[#FF0000]"><Youtube size={24} /></Link>
+                                <Link href="https://www.youtube.com/@SofiyaA-v6u" target="_blank" className="text-gray-400 hover:text-[#FF0000]"><Youtube size={24} /></Link>
                             </div>
                         </div>
                     </motion.div>
