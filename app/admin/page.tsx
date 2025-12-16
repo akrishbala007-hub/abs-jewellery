@@ -136,7 +136,7 @@ export default function AdminPage() {
                     <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto text-primary mb-4">
                         <Lock size={32} />
                     </div>
-                    <h1 className="text-2xl font-serif text-white">Admin Access</h1>
+                    <h1 className="text-2xl font-serif text-white">Admin Access <span className="text-xs text-green-500 font-sans tracking-normal ml-2">v2.0</span></h1>
                     <input
                         type="password"
                         value={pin}
