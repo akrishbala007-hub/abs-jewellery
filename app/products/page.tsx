@@ -14,7 +14,15 @@ export default async function ProductsPage() {
             <h1 className="text-4xl md:text-5xl font-serif text-primary mb-12 text-center">Our Collection</h1>
 
             {products.length === 0 ? (
-                <p className="text-center text-gray-500">No products found. Please add some via the Admin Panel.</p>
+                <div className="text-center text-gray-500 space-y-2">
+                    <p>No products found. Please add some via the Admin Panel.</p>
+                    <div className="text-xs p-4 bg-zinc-900/50 rounded inline-block">
+                        <p>Status Check:</p>
+                        <p>Supabase URL: {process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Connected' : '❌ Missing'}</p>
+                        <p>Supabase Key: {process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '✅ Set' : '❌ Missing'}</p>
+                        <p>Timestamp: {new Date().toISOString()}</p>
+                    </div>
+                </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {products.map((product: any) => (
