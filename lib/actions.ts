@@ -61,3 +61,23 @@ export async function deleteProduct(id: number) {
     revalidatePath('/products');
     return { success: true };
 }
+
+export async function updateProduct(id: number, formData: FormData) {
+    const title = formData.get('title') as string;
+    const description = formData.get('description') as string;
+    const price = formData.get('price') as string;
+    const image_url = formData.get('image_url') as string;
+
+    const { error } = await supabase
+        .from('products')
+        .update({ title, description, price, image_url })
+        .match({ id });
+
+    if (error) {
+        console.error('Error updating product:', error);
+        return { success: false, error: error.message };
+    }
+
+    revalidatePath('/products');
+    return { success: true };
+}

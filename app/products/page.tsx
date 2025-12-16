@@ -1,5 +1,6 @@
 import React from 'react';
 import { getProducts } from '@/lib/actions';
+import ImageWithFallback from '@/components/ui/ImageWithFallback';
 // import Image from 'next/image'; 
 
 export const dynamic = 'force-dynamic';
@@ -19,7 +20,7 @@ export default async function ProductsPage() {
                     {products.map((product: any) => (
                         <div key={product.id} className="bg-zinc-900 border border-white/5 hover:border-primary/50 transition-all duration-300 group overflow-hidden">
                             <div className="aspect-square relative overflow-hidden bg-zinc-800">
-                                <img
+                                <ImageWithFallback
                                     src={product.image_url}
                                     alt={product.title}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -30,7 +31,16 @@ export default async function ProductsPage() {
                                     <h2 className="text-xl text-white font-serif">{product.title}</h2>
                                     <span className="text-primary font-bold">{product.price}</span>
                                 </div>
-                                <p className="text-gray-400 text-sm line-clamp-2">{product.description}</p>
+                                <p className="text-gray-400 text-sm line-clamp-2 mb-4">{product.description}</p>
+
+                                <a
+                                    href={`https://wa.me/919597016643?text=Hello, I am interested in buying ${encodeURIComponent(product.title)} - ${encodeURIComponent(product.price)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full bg-green-600 hover:bg-green-500 text-white text-center py-3 rounded-lg font-bold transition-colors flex items-center justify-center gap-2"
+                                >
+                                    <span>Buy on WhatsApp</span>
+                                </a>
                             </div>
                         </div>
                     ))}
